@@ -37,13 +37,13 @@ room.setTimeLimit(timeLimit);
 room.setTeamsLock(true);
 room.setKickRateLimit(6, 0, 0);
 
-var masterPassword = 10000 + getRandomInt(90000);
+var masterPassword = '033';
 var roomPassword = '';
 
 /* OPTIONS */
 
 var drawTimeLimit = Infinity;
-var maxAdmins = 3;
+var maxAdmins = 2;
 var disableBans = true;
 var maxInactivity = 5;
 var debugMode = false;
