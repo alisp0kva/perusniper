@@ -1760,7 +1760,7 @@ room.onPlayerJoin = function (player) {
         }).then((res) => res);
     }
     room.sendAnnouncement(
-        `❤ Bienvenido ${player.name} a la sala de NEOCIF, unete al discord de la liga aqui > https://discord.gg/V6VwNeSmxA \nSala configurada por ardilla ❤`,
+        `❤ Bienvenido ${player.name} a la sala libre de uso, unete al discord aqui > https://discord.gg/qg3PKnXkHA \nSala configurada y mantenida por ardilla ❤`,
         player.id,
         welcomeColor,
         'bold',
