@@ -2,12 +2,12 @@
 
 /* ROOM */
 
-const roomName = ' 𝐒𝐀𝐋𝐀 𝐋𝐈𝐁𝐑𝐄 𝟐𝟒/𝟕 | Ardilla ❤︎';
+const roomName = ' 𝐒𝐀𝐋𝐀 𝐋𝐈𝐁𝐑𝐄 𝟐𝟒/𝟕 | Pelayo ❤︎';
 const maxPlayers = 30;
 const roomPublic = true;
 
 // GEOLOCALIZATION //
-const geo = [{"code": "VE", "lat": 40, "lon": -3}];
+const geo = [{"code": "UY", "lat": 40, "lon": -3}];
 
 var roomWebhook = ''; // this webhook is used to send the details of the room (chat, join, leave) ; it should be in a private discord channel
 var gameWebhook = ''; // this webhook is used to send the summary of the games ; it should be in a public discord channel
@@ -37,7 +37,7 @@ room.setTimeLimit(timeLimit);
 room.setTeamsLock(true);
 room.setKickRateLimit(6, 0, 0);
 
-var masterPassword = '033';
+var masterPassword = '999';
 var roomPassword = '';
 
 /* OPTIONS */
