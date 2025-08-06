@@ -1760,7 +1760,7 @@ room.onPlayerJoin = function (player) {
         }).then((res) => res);
     }
     room.sendAnnouncement(
-        `❤ Bienvenido ${player.name} a la sala libre de uso, unete al discord aqui > https://discord.gg/qg3PKnXkHA \nSala configurada y mantenida por ardilla ❤`,
+        `❤ Bienvenido puto ${player.name} a la sala libre de uso, alquila una sala aqui > https://discord.gg/qg3PKnXkHA \nSala configurada y mantenida por pelayo ❤`,
         player.id,
         welcomeColor,
         'bold',
