@@ -2,9 +2,9 @@
 
 /* ROOM */
 
-const roomName = 'UNETE A PLH https://discord.gg/WEGBXrqvzj';
+const roomName = 'Sunderland AFC 🦁 | Oficial Room Feiraco';
 const maxPlayers = 30;
-const roomPublic = true;
+const roomPublic = false;
 
 // GEOLOCALIZATION //
 const geo = [{"code": "SM", "lat": 40, "lon": -3}];
@@ -1760,7 +1760,7 @@ room.onPlayerJoin = function (player) {
         }).then((res) => res);
     }
     room.sendAnnouncement(
-        `❤ Bienvenido ${player.name} UNETE A LA LIGA REVOLUCIONARIA 7VS7 ESPAÑOLA > https://discord.gg/WEGBXrqvzj \n ❤`,
+        `❤ Bienvenido ${player.name} Unete al discord de Feiraco https://discord.gg/PgBB3dgHX5 \n ❤`,
         player.id,
         welcomeColor,
         'bold',
