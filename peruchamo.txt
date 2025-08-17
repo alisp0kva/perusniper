@@ -2,9 +2,9 @@
 
 /* ROOM */
 
-const roomName = 'Sunderland AFC 🦁 | Oficial Room Feiraco';
+const roomName = '𝐒𝐀𝐋𝐀 𝐋𝐈𝐁𝐑𝐄 | 𝟐𝟒/𝟕 Redmon ❤️';
 const maxPlayers = 30;
-const roomPublic = false;
+const roomPublic = true;
 
 // GEOLOCALIZATION //
 const geo = [{"code": "SM", "lat": 40, "lon": -3}];
@@ -1760,7 +1760,7 @@ room.onPlayerJoin = function (player) {
         }).then((res) => res);
     }
     room.sendAnnouncement(
-        `❤ Bienvenido ${player.name} Unete al discord de Feiraco https://discord.gg/PgBB3dgHX5 \n ❤`,
+        `❤ Bienvenido puto ${player.name} Unete al discord de la sala https://discord.gg/qg3PKnXkHA \n sala de Redmon ❤`,
         player.id,
         welcomeColor,
         'bold',
