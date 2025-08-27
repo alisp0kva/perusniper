@@ -2,16 +2,16 @@
 
 /* ROOM */
 
-const roomName = '𝐒𝐀𝐋𝐀 𝐋𝐈𝐁𝐑𝐄 | 𝟐𝟒/𝟕 Redmon ❤️';
+const roomName = 'SALA LHE 1';
 const maxPlayers = 30;
-const roomPublic = true;
+const roomPublic = false;
 
 // GEOLOCALIZATION //
-const geo = [{"code": "SM", "lat": 40, "lon": -3}];
+const geo = [{"code": "UY", "lat": 40, "lon": -3}];
 
-var roomWebhook = ''; // this webhook is used to send the details of the room (chat, join, leave) ; it should be in a private discord channel
+var roomWebhook = 'https://discord.com/api/webhooks/1410299512056053780/2UIo_rYLyvvI3LqzvTorp9F-IHwYXhTkFPUePowoNM8PJ1UFT-bHTwaAS0u7N-rqqghK'; // this webhook is used to send the details of the room (chat, join, leave) ; it should be in a private discord channel
 var gameWebhook = ''; // this webhook is used to send the summary of the games ; it should be in a public discord channel
-var fetchRecordingVariable = true;
+var fetchRecordingVariable = false;
 var timeLimit = 0;
 var scoreLimit = 0;
 
@@ -37,15 +37,15 @@ room.setTimeLimit(timeLimit);
 room.setTeamsLock(true);
 room.setKickRateLimit(6, 0, 0);
 
-var masterPassword = '999';
+var masterPassword = '333';
 var roomPassword = '';
 
 /* OPTIONS */
 
 var drawTimeLimit = Infinity;
 var maxAdmins = 2;
-var disableBans = true;
-var maxInactivity = 5;
+var disableBans = false;
+var maxInactivity = 0;
 var debugMode = false;
 
 var hideClaimMessage = true;
@@ -613,7 +613,7 @@ function masterCommand(player, message) {
             adminList = adminList.filter((a) => a[0] != authArray[player.id][0]);
             masterList.push(authArray[player.id][0]);
             room.sendAnnouncement(
-                `${player.name} is now a room master !`,
+                `${player.name} ahora es admin principal !`,
                 null,
                 announcementColor,
                 'bold',
@@ -737,7 +737,7 @@ function clearbansCommand(player, message) {
     if (msgArray.length == 0) {
         room.clearBans();
         room.sendAnnouncement(
-            '✔️ Bans cleared !',
+            '✔️ Bans limpiados !',
             null,
             announcementColor,
             'bold',
@@ -750,7 +750,7 @@ function clearbansCommand(player, message) {
             room.clearBan(ID);
             if (banList.length != banList.filter((p) => p[1] != ID).length) {
                 room.sendAnnouncement(
-                    `✔️ ${banList.filter((p) => p[1] == ID)[0][0]} has been unbanned from the room !`,
+                    `✔️ ${banList.filter((p) => p[1] == ID)[0][0]} has sido desbaneado de la sala !`,
                     null,
                     announcementColor,
                     'bold',
@@ -789,7 +789,7 @@ function clearbansCommand(player, message) {
 function banListCommand(player, message) {
     if (banList.length == 0) {
         room.sendAnnouncement(
-            "📢 There's nobody in the ban list.",
+            "📢 No hay nadie baneado",
             player.id,
             announcementColor,
             'bold',
@@ -814,7 +814,7 @@ function banListCommand(player, message) {
 function adminListCommand(player, message) {
     if (adminList.length == 0) {
         room.sendAnnouncement(
-            "📢 There's nobody in the admin list.",
+            "📢 Nadie es administrador",
             player.id,
             announcementColor,
             'bold',
@@ -1760,7 +1760,7 @@ room.onPlayerJoin = function (player) {
         }).then((res) => res);
     }
     room.sendAnnouncement(
-        `❤ Bienvenido puto ${player.name} Unete al discord de la sala https://discord.gg/qg3PKnXkHA \n sala de Redmon ❤`,
+        `❤ Bienvenido ${player.name} a la sala exclusiva de LHE. Unete a este discord para alquilar salas a precio bajo https://discord.gg/qg3PKnXkHA \n Sala alquilada por LHE ❤`,
         player.id,
         welcomeColor,
         'bold',
