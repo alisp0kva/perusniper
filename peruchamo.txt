@@ -2,14 +2,14 @@
 
 /* ROOM */
 
-const roomName = 'SALA PLH 1';
+const roomName = '𝐒𝐀𝐋𝐀 𝐋𝐈𝐁𝐑𝐄 | 𝟐𝟒/𝟕 Redmon ❤️';
 const maxPlayers = 30;
 const roomPublic = false;
 
 // GEOLOCALIZATION //
 const geo = [{"code": "UY", "lat": 40, "lon": -3}];
 
-var roomWebhook = 'https://discord.com/api/webhooks/1410299163530367147/pw-NFmn01LtFfxpwdwzsiWq_k2ljI8pqfXCT6pznPuKrt5QLclM7ydlglGk97FjtgQT0'; // this webhook is used to send the details of the room (chat, join, leave) ; it should be in a private discord channel
+var roomWebhook = 'https://discord.com/api/webhooks/1410298134873247945/eSOLTjcNsG4FMC2BL_b9czBgFpnN_Inf6O36pbOTjXJTAjQQ8BZn3AEt-TCs6TJVLEFp'; // this webhook is used to send the details of the room (chat, join, leave) ; it should be in a private discord channel
 var gameWebhook = ''; // this webhook is used to send the summary of the games ; it should be in a public discord channel
 var fetchRecordingVariable = false;
 var timeLimit = 0;
@@ -37,7 +37,7 @@ room.setTimeLimit(timeLimit);
 room.setTeamsLock(true);
 room.setKickRateLimit(6, 0, 0);
 
-var masterPassword = '455';
+var masterPassword = '001';
 var roomPassword = '';
 
 /* OPTIONS */
