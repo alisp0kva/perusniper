@@ -2,14 +2,14 @@
 
 /* ROOM */
 
-const roomName = 'SALA LHE 1';
+const roomName = 'SALA LHE 2';
 const maxPlayers = 30;
 const roomPublic = false;
 
 // GEOLOCALIZATION //
 const geo = [{"code": "UY", "lat": 40, "lon": -3}];
 
-var roomWebhook = 'https://discord.com/api/webhooks/1410299512056053780/2UIo_rYLyvvI3LqzvTorp9F-IHwYXhTkFPUePowoNM8PJ1UFT-bHTwaAS0u7N-rqqghK'; // this webhook is used to send the details of the room (chat, join, leave) ; it should be in a private discord channel
+var roomWebhook = 'https://discord.com/api/webhooks/1410298768489840640/JqM83n24lXnEaz9CaB9exUF2Z8OGQr4_S1wlk5jvfNEtRaGrBzLhV5G5MviRZWlC2_hR'; // this webhook is used to send the details of the room (chat, join, leave) ; it should be in a private discord channel
 var gameWebhook = ''; // this webhook is used to send the summary of the games ; it should be in a public discord channel
 var fetchRecordingVariable = false;
 var timeLimit = 0;
