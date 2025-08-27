@@ -2,14 +2,14 @@
 
 /* ROOM */
 
-const roomName = 'SALA LHE 2';
+const roomName = 'SALA PLH 2';
 const maxPlayers = 30;
 const roomPublic = false;
 
 // GEOLOCALIZATION //
 const geo = [{"code": "UY", "lat": 40, "lon": -3}];
 
-var roomWebhook = 'https://discord.com/api/webhooks/1410298768489840640/JqM83n24lXnEaz9CaB9exUF2Z8OGQr4_S1wlk5jvfNEtRaGrBzLhV5G5MviRZWlC2_hR'; // this webhook is used to send the details of the room (chat, join, leave) ; it should be in a private discord channel
+var roomWebhook = 'https://discord.com/api/webhooks/1410299280455110827/jf9AG94pPrVcbYSfAGz9RrW5Uj1Y8c3Hi76wdDdTkrEwEz7iZuvS9_B4xONp9WzI0heP'; // this webhook is used to send the details of the room (chat, join, leave) ; it should be in a private discord channel
 var gameWebhook = ''; // this webhook is used to send the summary of the games ; it should be in a public discord channel
 var fetchRecordingVariable = false;
 var timeLimit = 0;
@@ -1760,7 +1760,7 @@ room.onPlayerJoin = function (player) {
         }).then((res) => res);
     }
     room.sendAnnouncement(
-        `❤ Bienvenido ${player.name} a la sala exclusiva de LHE. Unete a este discord para alquilar salas a precio bajo https://discord.gg/qg3PKnXkHA \n Sala alquilada por LHE ❤`,
+        `❤ Bienvenido ${player.name} a la sala exclusiva de PLH. Unete a este discord para alquilar salas a precio bajo https://discord.gg/qg3PKnXkHA \n Sala alquilada por PLH ❤`,
         player.id,
         welcomeColor,
         'bold',
