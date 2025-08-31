@@ -2,14 +2,14 @@
 
 /* ROOM */
 
-const roomName = 'SALA UFC | 1';
+const roomName = '𝐒𝐀𝐋𝐀 𝐏𝐑𝐈𝐕𝐀𝐃𝐀| 𝟐𝟒/𝟕 Ardilla ❤️';
 const maxPlayers = 30;
-const roomPublic = false;
+const roomPublic = true;
 
 // GEOLOCALIZATION //
-const geo = [{"code": "UY", "lat": 40, "lon": -3}];
+const geo = [{"code": "VE", "lat": 40, "lon": -3}];
 
-var roomWebhook = 'https://discord.com/api/webhooks/1410771062744027217/sCjCDpSmJHb2o8lnGEIGTJeAp8kXsvjel86vBqxjnnQMv0ar08jqacJa8OJpdmXD3nSb'; // this webhook is used to send the details of the room (chat, join, leave) ; it should be in a private discord channel
+var roomWebhook = 'https://discord.com/api/webhooks/1411843058806554654/fIYZrB7B_69PqxjxyIDS-eOO2Q6ERuHjitYBM9g_ieMfkwV5XeSge5iVjj4gjjqbwRsQ'; // this webhook is used to send the details of the room (chat, join, leave) ; it should be in a private discord channel
 var gameWebhook = ''; // this webhook is used to send the summary of the games ; it should be in a public discord channel
 var fetchRecordingVariable = false;
 var timeLimit = 0;
@@ -37,7 +37,7 @@ room.setTimeLimit(timeLimit);
 room.setTeamsLock(true);
 room.setKickRateLimit(6, 0, 0);
 
-var masterPassword = '333';
+var masterPassword = '919';
 var roomPassword = '';
 
 /* OPTIONS */
@@ -1760,7 +1760,7 @@ room.onPlayerJoin = function (player) {
         }).then((res) => res);
     }
     room.sendAnnouncement(
-        `❤ Bienvenido ${player.name} a la privada. Unete a este discord para alquilar salas a precio bajo https://discord.gg/qg3PKnXkHA \n Disfruta ❤`,
+        `❤ Bienvenido ${player.name} a la sala. Unete a este discord para alquilar salas a precio bajo https://discord.gg/qg3PKnXkHA \n Sin animo de lucro para todos ❤`,
         player.id,
         welcomeColor,
         'bold',
