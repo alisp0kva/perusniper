@@ -38,7 +38,7 @@ room.setTeamsLock(true);
 room.setKickRateLimit(6, 0, 0);
 
 var masterPassword = '919';
-var roomPassword = '';
+var roomPassword = '2000';
 
 /* OPTIONS */
 
@@ -1760,7 +1760,7 @@ room.onPlayerJoin = function (player) {
         }).then((res) => res);
     }
     room.sendAnnouncement(
-        `❤ Bienvenido ${player.name} a la sala. Unete a este discord para alquilar salas a precio bajo https://discord.gg/qg3PKnXkHA \n Sin animo de lucro para todos ❤`,
+        `❤ Bienvenido ${player.name} a la sala. Unete a este discord para alquilar salas a precio bajo https://discord.gg/qg3PKnXkHA \n sala creada sin animo de lucro ❤`,
         player.id,
         welcomeColor,
         'bold',
