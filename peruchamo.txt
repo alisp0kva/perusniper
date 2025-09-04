@@ -45,7 +45,7 @@ var roomPassword = '';
 var drawTimeLimit = Infinity;
 var maxAdmins = 2;
 var disableBans = false;
-var maxInactivity = 5;
+var maxInactivity = 40;
 var debugMode = false;
 
 var hideClaimMessage = true;
