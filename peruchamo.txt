@@ -2,15 +2,15 @@
 
 /* ROOM */
 
-const roomName = 'OFI |Ardilla ❤️';
+const roomName = 'SALA FUTSAL 24/7| Ardilla ❤️';
 const maxPlayers = 30;
 const roomPublic = true;
 
 // GEOLOCALIZATION //
 const geo = [{"code": "VE", "lat": 40, "lon": -3}];
 
-var roomWebhook = 'https://discord.com/api/webhooks/1415735094521368637/XmVvYLxhkVGmh-kJ6TYWqpHg3tiatd1bDon4iQRMt-lzaqEhAZlnQ6ApmXzRSdb3cP_j'; // this webhook is used to send the details of the room (chat, join, leave) ; it should be in a private discord channel
-var gameWebhook = 'https://discord.com/api/webhooks/1415734676487933982/b3AcBnv9aFSiM7FJwJBYLlf1QMwBi5mk_R4bpSm-B5IyB3XOfVj1_sUnsqjeqlMgDxjM'; // this webhook is used to send the summary of the games ; it should be in a public discord channel
+var roomWebhook = 'https://discord.com/api/webhooks/1410298134873247945/eSOLTjcNsG4FMC2BL_b9czBgFpnN_Inf6O36pbOTjXJTAjQQ8BZn3AEt-TCs6TJVLEFp'; // this webhook is used to send the details of the room (chat, join, leave) ; it should be in a private discord channel
+var gameWebhook = 'https://discord.com/api/webhooks/1413176426273837056/t_F2EmHwf7TTlMX1A_24nmEV0vDjq2KMc0X1CoUeRW7k1zrtv4Ed_265Kc22i_ufkYZU'; // this webhook is used to send the summary of the games ; it should be in a public discord channel
 var fetchRecordingVariable = true;
 var timeLimit = 0;
 var scoreLimit = 0;
@@ -37,7 +37,7 @@ room.setTimeLimit(timeLimit);
 room.setTeamsLock(true);
 room.setKickRateLimit(6, 0, 0);
 
-var masterPassword = '8523';
+var masterPassword = '8372';
 var roomPassword = '';
 
 /* OPTIONS */
