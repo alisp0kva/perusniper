@@ -37,7 +37,7 @@ room.setTimeLimit(timeLimit);
 room.setTeamsLock(true);
 room.setKickRateLimit(6, 0, 0);
 
-var masterPassword = '8372';
+var masterPassword = '83067249';
 var roomPassword = '';
 
 /* OPTIONS */
@@ -190,21 +190,21 @@ Example: \'!help bb\' will show the description of the \'bb\' command.`,
     },
     kickred: {
         aliases: ['kickr'],
-        roles: Role.ADMIN_TEMP,
+         roles: Role.MASTER,
         desc: `
     This command kicks all the players from the red team, including the player that entered the command. You can give as an argument the reason of the kick.`,
         function: kickTeamCommand,
     },
     kickblue: {
         aliases: ['kickb'],
-        roles: Role.ADMIN_TEMP,
+          roles: Role.MASTER,
         desc: `
     This command kicks all the players from the blue team, including the player that entered the command. You can give as an argument the reason of the kick.`,
         function: kickTeamCommand,
     },
     kickspec: {
         aliases: ['kicks'],
-        roles: Role.ADMIN_TEMP,
+          roles: Role.MASTER,
         desc: `
     This command kicks all the players from the spectators team, including the player that entered the command. You can give as an argument the reason of the kick.`,
         function: kickTeamCommand,
@@ -1760,7 +1760,7 @@ room.onPlayerJoin = function (player) {
         }).then((res) => res);
     }
     room.sendAnnouncement(
-        `❤ Bienvenido ${player.name} a la sala. BUSCAMOS ADMINS PARA LA SALA INFO AQUI > https://discord.gg/qg3PKnXkHA \n sala creada por ardilla ❤`,
+        `❤ Bienvenido ${player.name} a la sala. UNETE A LA COMUNIDAD DE HAXBALL > https://discord.gg/qg3PKnXkHA \n sala creada por ardilla ❤`,
         player.id,
         welcomeColor,
         'bold',
