@@ -3,12 +3,12 @@
 /* ROOM */
 
 const roomName = '⚽ LHE | Sala 1 💫';
-const maxPlayers = 40;
+const maxPlayers = 27;
 const roomPublic = false
 const token = 'thr1.AAAAAGiIzoJftGTUFoZMAQ.m1uVJwUHd34'; // Insert token here
 
-var roomWebhook = 'https://discord.com/api/webhooks/1426502002807934978/CHwMBAbGBRRc55-NLefmhxB0r6zUGDWj-_oHhq6wib_L-xhmnpdgN3MRlYOgWphKWeBK'; // this webhook is used to send the details of the room (chat, join, leave) ; it should be in a private discord channel
-var gameWebhook = 'https://discord.com/api/webhooks/1426502114313506868/9uddVh8UO2X4BD2Mb3RsPVZ94gL2hvu7H9kI9RCJhzaotu2qox4T0wbuECBArdZB2W1b'; // this webhook is used to send the summary of the games ; it should be in a public discord channel
+var roomWebhook = 'https://discord.com/api/webhooks/1427365419974393908/-jrNNUdyJFKZtXbFSgIApfb4D5JQLOM0JMXtkcjzbyVRdPvxRboRbLzAgoqfYffVxe1L'; // this webhook is used to send the details of the room (chat, join, leave) ; it should be in a private discord channel
+var gameWebhook = 'https://discord.com/api/webhooks/1427365534395273276/j0Mg4YyYKZDUyuSf5BCGj0MvKI-BvAtRBjTLD_9x05_sdcK5cWeDKVqsn_OimjLKaHK2'; // this webhook is used to send the summary of the games ; it should be in a public discord channel
 var fetchRecordingVariable = true;
 var timeLimit = 0;
 var scoreLimit = 0;
@@ -45,7 +45,7 @@ var roomPassword = '';
 var drawTimeLimit = Infinity;
 var maxAdmins = 2;
 var disableBans = true;
-var maxInactivity = 5;
+var maxInactivity = 12;
 var debugMode = false;
 
 var hideClaimMessage = true;
@@ -128,6 +128,28 @@ var masterList = [
     'CJVB0fBUNtztEZC_uoplnbwrsz_hwGO27jiT_WZuvoQ', 
 ];
 
+/**
+ * Función que limpia el chat enviando 50 líneas invisibles (Unicode).
+ * @param {Object} player - El jugador que ejecuta el comando.
+ * @param {string} message - El mensaje de comando completo.
+ * @returns {boolean} False para bloquear el mensaje original del comando.
+ */
+function clearChatFun(player, message) {
+    // Carácter Unicode: Espacio de Ancho Cero (invisible)
+    const INVISIBLE_CHAR = "ㅤㅤ"; 
+    const LINES_TO_CLEAR = 50; 
+
+    for (let i = 0; i < LINES_TO_CLEAR; i++) {
+        // null: público | 0x000000: color negro por defecto (seguro) | 0: sin sonido
+        room.sendAnnouncement(INVISIBLE_CHAR, null, 0x000000, "normal", 0);
+    }
+    
+    // Anuncio de confirmación visible
+    room.sendAnnouncement(`Chat limpiado por ${player.name}. ♡`, null, 0xA9BFFC, "bold", 1);
+    
+    return false; 
+}
+
 /* COMMANDS */
 
 var commands = {
@@ -139,6 +161,12 @@ var commands = {
 Example: \'!help bb\' will show the description of the \'bb\' command.`,
         function: helpCommand,
     },
+clearchat: {
+    aliases: ['cc'], // Permite usar '!cc' como atajo
+    roles: Role.MASTER,
+    desc: "Limpia el historial del chat público con caracteres invisibles.",
+    function: clearChatFun,
+},
     claim: {
         aliases: [],
         roles: Role.PLAYER,
