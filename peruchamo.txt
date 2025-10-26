@@ -2,15 +2,15 @@
 
 /* ROOM */
 
-const roomName = 'FHE ROOM 2';
+const roomName = 'FHE ROOM 3';
 const maxPlayers = 30;
 const roomPublic = false;
 
 // GEOLOCALIZATION //
 const geo = [{"code": "VE", "lat": 40, "lon": -3}];
 
-var roomWebhook = 'https://discord.com/api/webhooks/1402040644842553494/OgGoauaT5er8Qf0D7vCxahpEhIeV3TkNjiL5N7ZWhOK9quoYeAb-3ZNkkO6QxU-ixanx'; // this webhook is used to send the details of the room (chat, join, leave) ; it should be in a private discord channel
-var gameWebhook = 'https://discord.com/api/webhooks/1420147618054672447/CPxCyB1rgCqhOzfEZR8BNY_reiJjhowcfT0_-bO8WTPfFkBg3irDxD_n1cT5anvPn8Od'; // this webhook is used to send the summary of the games ; it should be in a public discord channel
+var roomWebhook = 'https://discord.com/api/webhooks/1416118411511070831/M2LfuS-RlziWCUSPWhnZVVosaYdooAXf9fRUd0GTUedqsO0xAY6s0gEZ3bEICaFkDTPP'; // this webhook is used to send the details of the room (chat, join, leave) ; it should be in a private discord channel
+var gameWebhook = 'https://discord.com/api/webhooks/1420147741727658156/0pxPmgS3GQBvThdgBbbd27cKHGZ-ZVZUMM93vI5D8yjXk50JKXJqhKJY223S5J_AGisu'; // this webhook is used to send the summary of the games ; it should be in a public discord channel
 var fetchRecordingVariable = true;
 var timeLimit = 0;
 var scoreLimit = 0;
@@ -174,20 +174,20 @@ Example: \'!help bb\' will show the description of the \'bb\' command.`,
     This command swaps the teams when the game is stopped.`,
         function: swapCommand,
     },
-training: {
-    aliases: [],
-    roles: Role.ADMIN_TEMP,  
-    desc: `
-    This command loads the classic training stadium.`,
-    function: stadiumCommand,
-},
-big: {
-    aliases: [],
-    roles: Role.ADMIN_TEMP, 
-    desc: `
-    This command loads the big stadium.`,
-    function: stadiumCommand,
-},
+    training: {
+        aliases: [],
+        roles: Role.ADMIN_TEMP,
+        desc: `
+        This command loads the classic training stadium.`,
+        function: stadiumCommand,
+    },
+    big: {
+        aliases: [],
+        roles: Role.ADMIN_TEMP,
+        desc: `
+        This command loads the big stadium.`,
+        function: stadiumCommand,
+    },
     kickred: {
         aliases: ['kickr'],
         roles: Role.ADMIN_TEMP,
@@ -695,7 +695,6 @@ function kickTeamCommand(player, message) {
 
 function stadiumCommand(player, message) {
     var msgArray = message.split(/ +/);
-    
     if (gameState == State.STOP) {
         if (['!8321'].includes(msgArray[0].toLowerCase())) {
             if (JSON.parse(classicMap).name == 'Classic') {
@@ -703,35 +702,14 @@ function stadiumCommand(player, message) {
             } else {
                 room.setCustomStadium(classicMap);
             }
-            room.sendAnnouncement(
-                `✔️ Map changed to Classic.`,
-                null,
-                successColor,
-                'bold',
-                HaxNotification.CHAT
-            );
         } else if (['!big'].includes(msgArray[0].toLowerCase())) {
             if (JSON.parse(bigMap).name == 'Big') {
                 room.setDefaultStadium('Big');
             } else {
                 room.setCustomStadium(bigMap);
             }
-            room.sendAnnouncement(
-                `✔️ Map changed to Big.`,
-                null,
-                successColor,
-                'bold',
-                HaxNotification.CHAT
-            );
         } else if (['!training'].includes(msgArray[0].toLowerCase())) {
             room.setCustomStadium(trainingMap);
-            room.sendAnnouncement(
-                `✔️ Map changed to Training.`,
-                null,
-                successColor,
-                'bold',
-                HaxNotification.CHAT
-            );
         } else {
             room.sendAnnouncement(
                 `Stadium not recognized.`,
@@ -751,6 +729,7 @@ function stadiumCommand(player, message) {
         );
     }
 }
+
 /* MASTER COMMANDS */
 
 function clearbansCommand(player, message) {
@@ -2136,31 +2115,6 @@ room.onKickRateLimitSet = function (min, rate, burst, byPlayer) {
 
 room.onStadiumChange = function (newStadiumName, byPlayer) {
     checkStadiumVariable = true;
-    if (byPlayer != null) {
-        if (getRole(byPlayer) < Role.MASTER) {
-            room.sendAnnouncement(
-                `❌ ${byPlayer.name}, only Masters can change the map. Going back to Big...`,
-                null,
-                warningColor,
-                'bold',
-                HaxNotification.CHAT
-            );
-            
-            if (JSON.parse(bigMap).name == 'Big') {
-                room.setDefaultStadium('Big');
-            } else {
-                room.setCustomStadium(bigMap);
-            }
-        } else {
-            room.sendAnnouncement(
-                `Master ${byPlayer.name} changed the map to ${newStadiumName}.`,
-                null,
-                announcementColor,
-                'bold',
-                HaxNotification.CHAT
-            );
-        }
-    }
 };
 
 room.onGameTick = function () {
